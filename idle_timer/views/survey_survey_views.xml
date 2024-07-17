@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="survey_idle_timer_form_view" model="ir.ui.view">
+        <field name="name">survey.idle.timer.inherit.form.view</field>
+        <field name="model">survey.survey</field>
+        <field name="inherit_id" ref="survey.survey_survey_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='options']" position="after">
+                <group string="Idle Timer" name="idle_timer">
+                    <label for="is_idle_timer" string="Idle Timer (Seconds)"/>
+                    <div class="o_checkbox_optional_field">
+                        <field name="is_idle_timer" nolabel="1"/>
+                        <div invisible="not is_idle_timer">
+                            <field name="idle_timer" nolabel="1" class="oe_inline"/>
+                            Seconds
+                        </div>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
